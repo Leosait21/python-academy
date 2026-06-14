@@ -10,7 +10,9 @@ HTML = """
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Разработка сайтов на заказ</title>
+<title>Курсы программирования Python с нуля</title>
+
+<meta name="google-site-verification" content="v1PzejX5ey60Z5Y_8JEWPIzwRmTXIfcLQPmj0MLYKgs" />
 
 <style>
 *{
@@ -36,7 +38,7 @@ top:0;
 }
 
 .logo{
-font-size:28px;
+font-size:32px;
 font-weight:bold;
 color:#38bdf8;
 }
@@ -44,164 +46,269 @@ color:#38bdf8;
 nav a{
 color:white;
 text-decoration:none;
-margin-left:20px;
-font-size:16px;
+margin-left:25px;
+font-size:18px;
 }
 
 .hero{
-height:90vh;
+height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
 flex-direction:column;
 text-align:center;
 background:linear-gradient(135deg,#0f172a,#1e3a8a);
-padding:20px;
 }
 
 .hero h1{
-font-size:52px;
+font-size:72px;
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:20px;
+font-size:24px;
 max-width:700px;
 margin-bottom:30px;
-opacity:0.9;
 }
 
 .btn{
 background:#f59e0b;
-padding:15px 35px;
+padding:18px 40px;
 border-radius:10px;
 text-decoration:none;
 color:white;
-font-size:18px;
+font-size:22px;
 font-weight:bold;
 }
 
 .section{
-padding:80px 10%;
+padding:100px 10%;
 }
 
 .title{
 text-align:center;
-font-size:40px;
-margin-bottom:40px;
+font-size:48px;
+margin-bottom:50px;
 }
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
 }
 
 .card{
 background:#1e293b;
-padding:25px;
-border-radius:15px;
+padding:30px;
+border-radius:20px;
 }
 
-.contact-box{
+.price{
+font-size:32px;
+font-weight:bold;
+color:#22c55e;
+margin-top:15px;
+}
+
+.pay-box{
 margin-top:40px;
 background:#111827;
 padding:30px;
-border-radius:15px;
+border-radius:20px;
 text-align:center;
 }
 
-.contact-box a{
+.pay-btn{
 display:inline-block;
 margin:10px;
-padding:12px 20px;
+padding:15px 25px;
+background:#22c55e;
+color:white;
 border-radius:10px;
 text-decoration:none;
-color:white;
 font-weight:bold;
 }
 
-.whatsapp{
-background:#22c55e;
-}
-
-.insta{
-background:#e1306c;
-}
-
 footer{
-padding:25px;
+padding:30px;
 text-align:center;
 background:#020617;
 }
 
 /* MOBILE */
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-.hero h1{font-size:32px;}
-.hero p{font-size:16px;}
-.section{padding:50px 15px;}
-.title{font-size:26px;}
+header{
+padding:15px;
+flex-direction:column;
+align-items:flex-start;
+gap:10px;
+}
+
+nav a{
+margin:5px 10px 0 0;
+font-size:14px;
+display:inline-block;
+}
+
+.section{
+padding:50px 15px;
+}
+
+.hero{
+padding:40px 15px;
+text-align:center;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.card{
+padding:20px;
+}
+
+.title{
+font-size:26px;
+}
+
+.price{
+font-size:24px;
+}
+
+.btn{
+font-size:16px;
+padding:12px 20px;
+}
+
+.pay-box{
+padding:20px;
+}
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-<div class="logo">Web Studio</div>
+<div class="logo">Python Academy</div>
 <nav>
-<a href="#services">Услуги</a>
-<a href="#contact">Контакты</a>
+<a href="#">Главная</a>
+<a href="#">Курсы</a>
+<a href="#">Отзывы</a>
+<a href="#">Контакты</a>
 </nav>
 </header>
 
 <section class="hero">
-<h1>Делаем сайты на заказ</h1>
-<p>Создаём современные сайты для бизнеса, которые привлекают клиентов и заявки.</p>
+<h1>Стань Python Разработчиком</h1>
+<p>Освой программирование с нуля и начни карьеру в IT.</p>
 
-<a class="btn" href="#contact">Связаться</a>
+<a class="btn" href="https://wa.me/992109919197?text=Хочу записаться на курс Python">
+🔥 Записаться
+</a>
 </section>
 
-<section class="section" id="services">
-<h2 class="title">Что мы делаем</h2>
+<section class="section">
+<h2 class="title">Наши курсы</h2>
 
 <div class="cards">
-<div class="card">Сайты для бизнеса</div>
-<div class="card">Лендинги</div>
-<div class="card">Сайты под заявки</div>
-<div class="card">Адаптивный дизайн</div>
+
+<div class="card">
+<h3>Python с нуля</h3>
+<p>Переменные, функции, циклы, ООП и проекты.</p>
+<div class="price">499 сомони</div>
+</div>
+
+<div class="card">
+<h3>Web-разработка</h3>
+<p>Flask, Django, базы данных.</p>
+<div class="price">999 сомони</div>
+</div>
+
+<div class="card">
+<h3>AI и Machine Learning</h3>
+<p>Нейросети и анализ данных.</p>
+<div class="price">1499 сомони</div>
+</div>
+
 </div>
 </section>
 
 <section class="section">
-<h2 class="title">Этот сайт тоже продаётся</h2>
-<div class="card">
-Этот сайт является примером работы и может быть адаптирован под любой бизнес.
+<h2 class="title">Почему выбирают нас</h2>
+
+<div class="cards">
+<div class="card"><h3>100% Практика</h3><p>Работа над реальными проектами.</p></div>
+<div class="card"><h3>Сертификат</h3><p>Подтверждение навыков.</p></div>
+<div class="card"><h3>Трудоустройство</h3><p>Помощь с работой.</p></div>
 </div>
 </section>
 
-<section class="section" id="contact">
-<h2 class="title">Связь со мной</h2>
+<section class="section">
+<h2 class="title">Отзывы студентов</h2>
 
-<div class="contact-box">
+<div class="cards">
+<div class="card"><h3>Ахмад</h3><p>Начал брать заказы после курса.</p>⭐⭐⭐⭐⭐</div>
+<div class="card"><h3>Мухаммад</h3><p>Очень понятное обучение.</p>⭐⭐⭐⭐⭐</div>
+<div class="card"><h3>Фаррух</h3><p>Устроился Junior разработчиком.</p>⭐⭐⭐⭐⭐</div>
+</div>
+</section>
 
-<p>Напишите для заказа сайта:</p>
+<section class="section">
+<h2 class="title">Что вы изучите</h2>
 
-<a class="whatsapp" href="https://wa.me/992109919197" target="_blank">
-WhatsApp
-</a>
+<div class="cards">
+<div class="card"><h3>Python Basics</h3><p>Основы языка</p></div>
+<div class="card"><h3>ООП</h3><p>Классы и объекты</p></div>
+<div class="card"><h3>Django</h3><p>Веб разработка</p></div>
+<div class="card"><h3>Telegram Bots</h3><p>Боты</p></div>
+<div class="card"><h3>Data Science</h3><p>Анализ данных</p></div>
+<div class="card"><h3>AI</h3><p>Нейросети</p></div>
+</div>
+</section>
 
-<a class="insta" href="https://instagram.com/darkness_leo_" target="_blank">
-Instagram
-</a>
+<section class="section">
+<h2 class="title">Наши преимущества</h2>
+
+<div class="cards">
+<div class="card"><h3>1500+</h3><p>Выпускников</p></div>
+<div class="card"><h3>50+</h3><p>Проектов</p></div>
+<div class="card"><h3>95%</h3><p>Довольных</p></div>
+<div class="card"><h3>24/7</h3><p>Поддержка</p></div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="title">Оплата и запись</h2>
+
+<div class="pay-box">
+<p>Выберите способ связи:</p>
+
+<a class="pay-btn" href="https://wa.me/992109919197" target="_blank">WhatsApp</a>
 
 </div>
+
+<!-- 🔥 ДОБАВЛЕНО В КОНЦЕ -->
+<div class="section">
+<h2 class="title">Дополнительно</h2>
+<div class="card">
+Делаем сайты на заказ. Этот сайт тоже продаётся и может быть адаптирован под любой бизнес.
+</div>
+</div>
+
 </section>
 
 <footer>
-© 2026 Web Studio
+© 2026 Python Academy
 </footer>
 
 </body>
