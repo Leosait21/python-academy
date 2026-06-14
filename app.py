@@ -109,7 +109,6 @@ color:#22c55e;
 margin-top:15px;
 }
 
-/* PAYMENT */
 .pay-box{
 margin-top:40px;
 background:#111827;
@@ -153,12 +152,9 @@ background:#020617;
 <h1>Стань Python Разработчиком</h1>
 <p>Освой программирование с нуля и начни карьеру в IT.</p>
 
-<a class="btn" href="tel:+992109919197">
-📞 Позвонить
-</a>
+<a class="btn" href="tel:+992109919197">📞 Позвонить</a>
 </section>
 
-<!-- COURSES -->
 <section class="section">
 <h2 class="title">Наши курсы</h2>
 
@@ -185,21 +181,6 @@ background:#020617;
 </div>
 </section>
 
-<!-- PAYMENT -->
-<section class="section">
-<h2 class="title">Оплата</h2>
-
-<div class="pay-box">
-<p>Выберите способ оплаты:</p>
-
-<a class="pay-btn" href="https://paypal.com" target="_blank">PayPal</a>
-<a class="pay-btn" href="https://stripe.com" target="_blank">Visa / Mastercard</a>
-<a class="pay-btn" href="https://wa.me/992109919197" target="_blank">WhatsApp</a>
-
-</div>
-</section>
-
-<!-- WHY US -->
 <section class="section">
 <h2 class="title">Почему выбирают нас</h2>
 
@@ -210,7 +191,6 @@ background:#020617;
 </div>
 </section>
 
-<!-- REVIEWS -->
 <section class="section">
 <h2 class="title">Отзывы студентов</h2>
 
@@ -221,7 +201,6 @@ background:#020617;
 </div>
 </section>
 
-<!-- SKILLS -->
 <section class="section">
 <h2 class="title">Что вы изучите</h2>
 
@@ -235,7 +214,6 @@ background:#020617;
 </div>
 </section>
 
-<!-- FEATURES -->
 <section class="section">
 <h2 class="title">Наши преимущества</h2>
 
@@ -244,6 +222,20 @@ background:#020617;
 <div class="card"><h3>50+</h3><p>Проектов</p></div>
 <div class="card"><h3>95%</h3><p>Довольных</p></div>
 <div class="card"><h3>24/7</h3><p>Поддержка</p></div>
+</div>
+</section>
+
+<!-- 🔥 В КОНЦЕ ОПЛАТА -->
+<section class="section">
+<h2 class="title">Оплата и запись</h2>
+
+<div class="pay-box">
+<p>Выберите способ оплаты или оставьте заявку:</p>
+
+<a class="pay-btn" href="https://paypal.com" target="_blank">PayPal</a>
+<a class="pay-btn" href="https://stripe.com" target="_blank">Visa / Mastercard</a>
+<a class="pay-btn" href="https://wa.me/992109919197" target="_blank">WhatsApp</a>
+
 </div>
 </section>
 
