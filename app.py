@@ -1,4 +1,4 @@
-from flask import Flask, render_template_string
+from flask import Flask, render_template_string, request
 import os
 
 app = Flask(__name__)
@@ -135,6 +135,25 @@ text-align:center;
 background:#020617;
 }
 
+/* FORM */
+form input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:none;
+}
+
+form button{
+width:100%;
+padding:12px;
+background:#f59e0b;
+border:none;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+}
+
 /* MOBILE */
 @media (max-width: 768px) {
 
@@ -155,11 +174,6 @@ display:inline-block;
 padding:50px 15px;
 }
 
-.hero{
-padding:40px 15px;
-text-align:center;
-}
-
 .hero h1{
 font-size:34px;
 }
@@ -172,25 +186,8 @@ font-size:16px;
 grid-template-columns:1fr;
 }
 
-.card{
-padding:20px;
-}
-
 .title{
 font-size:26px;
-}
-
-.price{
-font-size:24px;
-}
-
-.btn{
-font-size:16px;
-padding:12px 20px;
-}
-
-.pay-box{
-padding:20px;
 }
 }
 </style>
@@ -218,10 +215,18 @@ padding:20px;
 </section>
 
 <section class="section">
+<h2 class="title">О нас</h2>
+<div class="card">
+<p>
+Мы обучаем Python с нуля до трудоустройства. Практика, проекты и поддержка наставника.
+</p>
+</div>
+</section>
+
+<section class="section">
 <h2 class="title">Наши курсы</h2>
 
 <div class="cards">
-
 <div class="card">
 <h3>Python с нуля</h3>
 <p>Переменные, функции, циклы, ООП и проекты.</p>
@@ -239,7 +244,6 @@ padding:20px;
 <p>Нейросети и анализ данных.</p>
 <div class="price">1499 сомони</div>
 </div>
-
 </div>
 </section>
 
@@ -277,24 +281,31 @@ padding:20px;
 </section>
 
 <section class="section">
-<h2 class="title">Наши преимущества</h2>
+<h2 class="title">🔥 Осталось мало мест</h2>
 
-<div class="cards">
-<div class="card"><h3>1500+</h3><p>Выпускников</p></div>
-<div class="card"><h3>50+</h3><p>Проектов</p></div>
-<div class="card"><h3>95%</h3><p>Довольных</p></div>
-<div class="card"><h3>24/7</h3><p>Поддержка</p></div>
+<div class="card">
+<p>Только 7 мест на текущий поток. Набор скоро закрывается.</p>
 </div>
 </section>
 
 <section class="section">
-<h2 class="title">Оплата и запись</h2>
+<h2 class="title">Записаться на курс</h2>
 
 <div class="pay-box">
-<p>Выберите способ связи:</p>
+<form method="POST">
+<input type="text" name="name" placeholder="Ваше имя" required>
+<input type="text" name="phone" placeholder="Ваш телефон" required>
+<button type="submit">Отправить заявку</button>
+</form>
+</div>
+</section>
 
-<a class="pay-btn" href="https://wa.me/992109919197" target="_blank">WhatsApp</a>
+<section class="section">
+<h2 class="title">Контакты</h2>
 
+<div class="card">
+<p>WhatsApp: +992 109 919 197</p>
+<p>Поддержка: 24/7</p>
 </div>
 </section>
 
@@ -306,8 +317,13 @@ padding:20px;
 </html>
 """
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def home():
+    if request.method == "POST":
+        name = request.form.get("name")
+        phone = request.form.get("phone")
+        print(f"Новая заявка: {name} - {phone}")
+
     return render_template_string(HTML)
 
 if __name__ == "__main__":
