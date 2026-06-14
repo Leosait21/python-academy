@@ -281,14 +281,6 @@ font-size:26px;
 </section>
 
 <section class="section">
-<h2 class="title">🔥 Осталось мало мест</h2>
-
-<div class="card">
-<p>Только 7 мест на текущий поток. Набор скоро закрывается.</p>
-</div>
-</section>
-
-<section class="section">
 <h2 class="title">Записаться на курс</h2>
 
 <div class="pay-box">
