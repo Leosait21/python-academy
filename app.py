@@ -219,6 +219,28 @@ padding:20px;
 </a>
 </section>
 
+<!-- 🔥 НОВЫЙ БЛОК -->
+<section class="section">
+<h2 class="title">Формат обучения</h2>
+
+<div class="cards">
+<div class="card">
+<h3>Онлайн обучение</h3>
+<p>Учитесь из любой точки мира в удобное время.</p>
+</div>
+
+<div class="card">
+<h3>Офлайн в Душанбе</h3>
+<p>Можно обучаться лично в городе Душанбе с преподавателем.</p>
+</div>
+
+<div class="card">
+<h3>Гибкий формат</h3>
+<p>Можно совмещать онлайн и офлайн обучение.</p>
+</div>
+</div>
+</section>
+
 <section class="section">
 <h2 class="title">Наши курсы</h2>
 
