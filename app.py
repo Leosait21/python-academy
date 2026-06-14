@@ -110,7 +110,6 @@ color:#22c55e;
 margin-top:15px;
 }
 
-/* PAY */
 .pay-box{
 margin-top:40px;
 background:#111827;
@@ -135,6 +134,65 @@ padding:30px;
 text-align:center;
 background:#020617;
 }
+
+/* ✅ FIX MOBILE (главное исправление) */
+@media (max-width: 768px) {
+
+header{
+padding:15px;
+flex-direction:column;
+align-items:flex-start;
+gap:10px;
+}
+
+nav a{
+margin:5px 10px 0 0;
+font-size:14px;
+display:inline-block;
+}
+
+.section{
+padding:50px 15px;
+}
+
+.hero{
+padding:40px 15px;
+text-align:center;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.card{
+padding:20px;
+}
+
+.title{
+font-size:26px;
+}
+
+.price{
+font-size:24px;
+}
+
+.btn{
+font-size:16px;
+padding:12px 20px;
+}
+
+.pay-box{
+padding:20px;
+}
+}
 </style>
 </head>
 
@@ -154,7 +212,9 @@ background:#020617;
 <h1>Стань Python Разработчиком</h1>
 <p>Освой программирование с нуля и начни карьеру в IT.</p>
 
-<a class="btn" href="tel:+992109919197">📞 Позвонить</a>
+<a class="btn" href="https://wa.me/992109919197?text=Хочу записаться на курс Python">
+🔥 Записаться
+</a>
 </section>
 
 <section class="section">
