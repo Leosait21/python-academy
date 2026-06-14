@@ -184,6 +184,37 @@ border-radius:10px;
 </div>
 </section>
 
+<!-- 🔥 ВОТ ТВОЯ ФОРМА ЗАЯВКИ -->
+<section class="section">
+<h2 class="title">Записаться на курс</h2>
+
+<div class="card">
+
+<form onsubmit="sendToWhatsApp(); return false;">
+
+<input type="text" id="name" placeholder="Ваше имя"
+style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<input type="tel" id="phone" placeholder="Ваш телефон"
+style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<select id="course"
+style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+<option>Python с нуля</option>
+<option>Web-разработка</option>
+<option>AI</option>
+</select>
+
+<button type="submit"
+style="width:100%;padding:15px;background:#22c55e;color:white;border:none;border-radius:10px;font-size:20px;">
+Отправить в WhatsApp
+</button>
+
+</form>
+
+</div>
+</section>
+
 <section class="section">
 <h2 class="title">Почему выбирают нас</h2>
 
@@ -231,6 +262,22 @@ border-radius:10px;
 <footer>
 © 2026 Python Academy
 </footer>
+
+<script>
+function sendToWhatsApp() {
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let course = document.getElementById("course").value;
+
+let message =
+`Новая заявка:%0AИмя: ${name}%0AТелефон: ${phone}%0AКурс: ${course}`;
+
+let url = "https://wa.me/992109919197?text=" + encodeURIComponent(message);
+
+window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
