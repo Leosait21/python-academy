@@ -135,7 +135,7 @@ text-align:center;
 background:#020617;
 }
 
-/* ✅ FIX MOBILE (главное исправление) */
+/* MOBILE */
 @media (max-width: 768px) {
 
 header{
@@ -291,10 +291,8 @@ padding:20px;
 <h2 class="title">Оплата и запись</h2>
 
 <div class="pay-box">
-<p>Выберите способ оплаты или оставьте заявку:</p>
+<p>Выберите способ связи:</p>
 
-<a class="pay-btn" href="https://paypal.com" target="_blank">PayPal</a>
-<a class="pay-btn" href="https://stripe.com" target="_blank">Visa / Mastercard</a>
 <a class="pay-btn" href="https://wa.me/992109919197" target="_blank">WhatsApp</a>
 
 </div>
