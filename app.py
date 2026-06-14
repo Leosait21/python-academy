@@ -219,7 +219,6 @@ padding:20px;
 </a>
 </section>
 
-<!-- 🔥 НОВЫЙ БЛОК -->
 <section class="section">
 <h2 class="title">Формат обучения</h2>
 
@@ -284,6 +283,33 @@ padding:20px;
 <div class="card"><h3>Ахмад</h3><p>Начал брать заказы после курса.</p>⭐⭐⭐⭐⭐</div>
 <div class="card"><h3>Мухаммад</h3><p>Очень понятное обучение.</p>⭐⭐⭐⭐⭐</div>
 <div class="card"><h3>Фаррух</h3><p>Устроился Junior разработчиком.</p>⭐⭐⭐⭐⭐</div>
+</div>
+</section>
+
+<!-- 🔥 РЕЗУЛЬТАТЫ -->
+<section class="section">
+<h2 class="title">Результаты студентов</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Али</h3>
+<p>Сделал Telegram-бота и получил первый заказ на фрилансе.</p>
+<div class="price">+150$ доход</div>
+</div>
+
+<div class="card">
+<h3>Мухаммад</h3>
+<p>Создал сайт-портфолио и устроился Junior разработчиком.</p>
+<div class="price">Работа в IT</div>
+</div>
+
+<div class="card">
+<h3>Фаррух</h3>
+<p>Начал брать заказы на Django сайты.</p>
+<div class="price">10+ проектов</div>
+</div>
+
 </div>
 </section>
 
