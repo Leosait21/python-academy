@@ -9,6 +9,7 @@ HTML = """
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Курсы программирования Python с нуля</title>
 
 <meta name="google-site-verification" content="v1PzejX5ey60Z5Y_8JEWPIzwRmTXIfcLQPmj0MLYKgs" />
@@ -109,6 +110,7 @@ color:#22c55e;
 margin-top:15px;
 }
 
+/* PAY */
 .pay-box{
 margin-top:40px;
 background:#111827;
@@ -225,7 +227,6 @@ background:#020617;
 </div>
 </section>
 
-<!-- 🔥 В КОНЦЕ ОПЛАТА -->
 <section class="section">
 <h2 class="title">Оплата и запись</h2>
 
