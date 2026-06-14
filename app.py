@@ -322,9 +322,71 @@ def home():
 
     return render_template_string(HTML)
 
+ADMIN_PASSWORD = "Mustafosait"
 
 @app.route("/admin")
 def admin():
+
+    password = request.args.get("password")
+
+    if password != ADMIN_PASSWORD:
+        return """
+        <html>
+        <head>
+        <title>Вход в админку</title>
+        <style>
+        body{
+            background:#0f172a;
+            color:white;
+            font-family:Segoe UI,sans-serif;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .box{
+            background:#1e293b;
+            padding:30px;
+            border-radius:15px;
+            text-align:center;
+            width:300px;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin-top:15px;
+            border:none;
+            border-radius:8px;
+        }
+
+        button{
+            margin-top:15px;
+            width:100%;
+            padding:12px;
+            background:#22c55e;
+            color:white;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+        }
+        </style>
+        </head>
+        <body>
+
+        <div class="box">
+            <h2>Админ-панель</h2>
+            <form method="get">
+                <input type="password" name="password" placeholder="Введите пароль">
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+
+        </body>
+        </html>
+        """
+
     if not os.path.exists(LOG_FILE):
         return "<h2>Пока нет посетителей</h2>"
 
@@ -332,8 +394,38 @@ def admin():
         lines = f.readlines()
 
     html = """
+    <html>
+    <head>
+    <title>Посетители</title>
+    <style>
+    body{
+        background:#0f172a;
+        color:white;
+        font-family:Segoe UI,sans-serif;
+        padding:30px;
+    }
+
+    table{
+        width:100%;
+        border-collapse:collapse;
+        background:#1e293b;
+    }
+
+    th,td{
+        border:1px solid #334155;
+        padding:10px;
+    }
+
+    th{
+        background:#111827;
+    }
+    </style>
+    </head>
+    <body>
+
     <h1>Посетители сайта</h1>
-    <table border="1" cellpadding="8">
+
+    <table>
         <tr>
             <th>Время</th>
             <th>IP</th>
@@ -344,9 +436,20 @@ def admin():
     for line in lines[::-1]:
         parts = line.strip().split(" | ")
         if len(parts) == 3:
-            html += f"<tr><td>{parts[0]}</td><td>{parts[1]}</td><td>{parts[2]}</td></tr>"
+            html += f"""
+            <tr>
+                <td>{parts[0]}</td>
+                <td>{parts[1]}</td>
+                <td>{parts[2]}</td>
+            </tr>
+            """
 
-    html += "</table>"
+    html += """
+    </table>
+    </body>
+    </html>
+    """
+
     return html
 
 
