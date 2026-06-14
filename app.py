@@ -1,5 +1,6 @@
-from flask import Flask, render_template_string
+from flask import Flask, render_template_string, request
 import os
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -135,7 +136,6 @@ text-align:center;
 background:#020617;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
 
 header{
@@ -153,11 +153,6 @@ display:inline-block;
 
 .section{
 padding:50px 15px;
-}
-
-.hero{
-padding:40px 15px;
-text-align:center;
 }
 
 .hero h1{
@@ -297,7 +292,6 @@ padding:20px;
 
 </div>
 
-<!-- 🔥 ДОБАВЛЕНО В КОНЦЕ -->
 <div class="section">
 <h2 class="title">Дополнительно</h2>
 <div class="card">
@@ -315,9 +309,46 @@ padding:20px;
 </html>
 """
 
+LOG_FILE = "visitors.txt"
+
 @app.route("/")
 def home():
+    ip = request.headers.get("X-Forwarded-For", request.remote_addr)
+    agent = request.headers.get("User-Agent")
+    time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(f"{time} | {ip} | {agent}\n")
+
     return render_template_string(HTML)
+
+
+@app.route("/admin")
+def admin():
+    if not os.path.exists(LOG_FILE):
+        return "<h2>Пока нет посетителей</h2>"
+
+    with open(LOG_FILE, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+
+    html = """
+    <h1>Посетители сайта</h1>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Время</th>
+            <th>IP</th>
+            <th>Браузер</th>
+        </tr>
+    """
+
+    for line in lines[::-1]:
+        parts = line.strip().split(" | ")
+        if len(parts) == 3:
+            html += f"<tr><td>{parts[0]}</td><td>{parts[1]}</td><td>{parts[2]}</td></tr>"
+
+    html += "</table>"
+    return html
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
