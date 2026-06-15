@@ -309,7 +309,7 @@ Instagram
 <div style="margin-top:20px;">
 <h3>Оставить заявку</h3>
 
-<form onsubmit="sendToInstagram(event)" style="margin-top:10px;">
+<form method="POST" action="/send" style="margin-top:10px;">
 <input id="name" placeholder="Ваше имя" style="padding:10px;width:80%;margin:5px;border-radius:8px;border:none;"><br>
 <textarea id="msg" placeholder="Сообщение" style="padding:10px;width:80%;height:100px;margin:5px;border-radius:8px;border:none;"></textarea><br>
 
@@ -354,6 +354,7 @@ function sendToInstagram(e){
 """
 
 LOG_FILE = "visitors.txt"
+LEADS_FILE = "leads.txt"
 
 @app.route("/")
 def home():
@@ -386,6 +387,19 @@ def sitemap():
     return Response(xml, mimetype="application/xml")
 
 
+@app.route("/send", methods=["POST"])
+def send():
+    name = request.form.get("name")
+    msg = request.form.get("msg")
+
+    ip = request.headers.get("X-Forwarded-For", request.remote_addr)
+    time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    with open(LEADS_FILE, "a", encoding="utf-8") as f:
+        f.write(f"{time} | {name} | {msg} | {ip}\n")
+
+    return "<h2>Заявка отправлена!</h2><a href='/'>Назад</a>"
+
 @app.route("/admin")
 def admin():
     password = request.args.get("password")
@@ -393,23 +407,26 @@ def admin():
     if password != "Mustafosait":
         return "<h2>Неверный пароль</h2>"
 
-    if not os.path.exists(LOG_FILE):
-        return "<h2>Пока нет посетителей</h2>"
+    html = "<h1>Админка</h1>"
 
-    with open(LOG_FILE, "r", encoding="utf-8") as f:
-        lines = f.readlines()
+    html += "<h2>Заявки</h2><table border=1 cellpadding=10>"
+    html += "<tr><th>Время</th><th>Имя</th><th>Сообщение</th><th>IP</th></tr>"
 
-    html = "<h1>Посетители</h1><table border=1><tr><th>Время</th><th>IP</th><th>Браузер</th></tr>"
-
-    for line in lines[::-1]:
-        parts = line.strip().split(" | ")
-        if len(parts) == 3:
-            html += f"<tr><td>{parts[0]}</td><td>{parts[1]}</td><td>{parts[2]}</td></tr>"
+    if os.path.exists(LEADS_FILE):
+        with open(LEADS_FILE, "r", encoding="utf-8") as f:
+            for line in f.readlines()[::-1]:
+                parts = line.strip().split(" | ")
+                if len(parts) == 4:
+                    html += f"<tr><td>{parts[0]}</td><td>{parts[1]}</td><td>{parts[2]}</td><td>{parts[3]}</td></tr>"
 
     html += "</table>"
+
     return html
+
+  
 
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
