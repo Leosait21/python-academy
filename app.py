@@ -296,10 +296,28 @@ padding:20px;
 <h2 class="title">Оплата и запись</h2>
 
 <div class="pay-box">
-<p>Выберите способ связи:</p>
+<p>Оставьте заявку или напишите нам:</p>
 
 <a class="pay-btn" href="https://wa.me/992109919197" target="_blank">WhatsApp</a>
 
+<!-- Instagram -->
+<a class="pay-btn" href="https://instagram.com/darkness_leo_" target="_blank">
+Instagram
+</a>
+
+<!-- ФОРМА ЗАЯВКИ -->
+<div style="margin-top:20px;">
+<h3>Оставить заявку</h3>
+
+<form onsubmit="sendToInstagram(event)" style="margin-top:10px;">
+<input id="name" placeholder="Ваше имя" style="padding:10px;width:80%;margin:5px;border-radius:8px;border:none;"><br>
+<textarea id="msg" placeholder="Сообщение" style="padding:10px;width:80%;height:100px;margin:5px;border-radius:8px;border:none;"></textarea><br>
+
+<button class="pay-btn" type="submit">Отправить в Instagram</button>
+</form>
+
+<p id="result" style="margin-top:10px;"></p>
+</div>
 </div>
 
 <div class="section">
@@ -314,6 +332,22 @@ padding:20px;
 <footer>
 © 2026 Python Academy
 </footer>
+<script>
+function sendToInstagram(e){
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let msg = document.getElementById("msg").value;
+
+    let text = "Привет, я " + name + ". " + msg;
+
+    let url = "https://instagram.com/direct/new/?text=" + encodeURIComponent(text);
+
+    document.getElementById("result").innerText = "Открываю Instagram...";
+
+    window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
