@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 HTML = """
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -359,9 +360,9 @@ def robots():
 def sitemap():
     xml = """<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://python-academy.onrender.com/</loc>
-</url>
+  <url>
+    <loc>https://python-academy.onrender.com/</loc>
+  </url>
 </urlset>
 """
     return Response(xml, mimetype="application/xml")
