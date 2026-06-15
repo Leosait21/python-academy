@@ -409,6 +409,64 @@ def admin():
 
     html = "<h1>Админка</h1>"
 
+    html += """
+    <br>
+    <a href="/admin?password=Mustafosait" style="
+        padding:10px 15px;
+        background:#3b82f6;
+        color:white;
+        text-decoration:none;
+        border-radius:8px;
+        margin-right:10px;
+    ">Обновить</a>
+
+    <a href="/clear_leads?password=Mustafosait" style="
+        padding:10px 15px;
+        background:#ef4444;
+        color:white;
+        text-decoration:none;
+        border-radius:8px;
+    ">Очистить заявки</a>
+
+    <br><br>
+    """
+
+    html += "<h2>Заявки</h2><table border=1 cellpadding=10>"
+    html += "<tr><th>Время</th><th>Имя</th><th>Сообщение</th><th>IP</th></tr>"
+
+    if os.path.exists(LEADS_FILE):
+        with open(LEADS_FILE, "r", encoding="utf-8") as f:
+            for line in f.readlines()[::-1]:
+                parts = line.strip().split(" | ")
+                if len(parts) == 4:
+                    html += f"<tr><td>{parts[0]}</td><td>{parts[1]}</td><td>{parts[2]}</td><td>{parts[3]}</td></tr>"
+
+    html += "</table>"
+    return html
+
+@app.route("/clear_leads")
+def clear_leads():
+    password = request.args.get("password")
+
+    if password != "Mustafosait":
+        return "<h2>Неверный пароль</h2>"
+
+    if os.path.exists(LEADS_FILE):
+        open(LEADS_FILE, "w", encoding="utf-8").close()
+
+    return "<h2>Очищено</h2><a href='/admin?password=Mustafosait'>Назад</a>"
+
+    if os.path.exists(LEADS_FILE):
+        open(LEADS_FILE, "w", encoding="utf-8").close()
+
+    return "<h2>Очищено</h2><a href='/admin?password=Mustafosait'>Назад</a>"
+    password = request.args.get("password")
+
+    if password != "Mustafosait":
+        return "<h2>Неверный пароль</h2>"
+
+    html = "<h1>Админка</h1>"
+
     html += "<h2>Заявки</h2><table border=1 cellpadding=10>"
     html += "<tr><th>Время</th><th>Имя</th><th>Сообщение</th><th>IP</th></tr>"
 
