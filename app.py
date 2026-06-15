@@ -6,7 +6,6 @@ app = Flask(__name__)
 
 HTML = """
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -363,8 +362,7 @@ def sitemap():
   <url>
     <loc>https://python-academy.onrender.com/</loc>
   </url>
-</urlset>
-"""
+</urlset>"""
     return Response(xml, mimetype="application/xml")
 
 
