@@ -13,6 +13,16 @@ HTML = """
 
 <title>Курсы программирования Python с нуля</title>
 
+<!-- SEO ДОБАВЛЕНО (НИЧЕГО НЕ УДАЛЕНО) -->
+<meta name="description" content="Курсы Python с нуля. Обучение программированию, Django, AI, Web-разработка.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://python-academy.onrender.com/">
+
+<meta property="og:title" content="Python Academy">
+<meta property="og:description" content="Курсы Python с нуля и IT обучение">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://python-academy.onrender.com/">
+
 <meta name="google-site-verification" content="v1PzejX5ey60Z5Y_8JEWPIzwRmTXIfcLQPmj0MLYKgs" />
 
 <style>
@@ -323,6 +333,25 @@ def home():
     return render_template_string(HTML)
 
 
+@app.route("/robots.txt")
+def robots():
+    return Response(
+        "User-agent: *\nAllow: /\nSitemap: https://python-academy.onrender.com/sitemap.xml",
+        mimetype="text/plain"
+    )
+
+
+@app.route("/sitemap.xml")
+def sitemap():
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://python-academy.onrender.com/</loc>
+  </url>
+</urlset>"""
+    return Response(xml, mimetype="application/xml")
+
+
 @app.route("/admin")
 def admin():
     password = request.args.get("password")
@@ -345,25 +374,6 @@ def admin():
 
     html += "</table>"
     return html
-
-
-@app.route("/robots.txt")
-def robots():
-    return Response(
-        "User-agent: *\nAllow: /\nSitemap: https://python-academy.onrender.com/sitemap.xml",
-        mimetype="text/plain"
-    )
-
-
-@app.route("/sitemap.xml")
-def sitemap():
-    xml = """<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://python-academy.onrender.com/</loc>
-  </url>
-</urlset>"""
-    return Response(xml, mimetype="application/xml")
 
 
 if __name__ == "__main__":
