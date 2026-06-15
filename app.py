@@ -449,8 +449,26 @@ def admin():
     </body>
     </html>
     """
-
     return html
+
+
+@app.route("/robots.txt")
+def robots():
+    return """User-agent: *
+Allow: /
+""", 200, {"Content-Type": "text/plain"}
+
+
+@app.route("/sitemap.xml")
+def sitemap():
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://python-academy.onrender.com/</loc>
+  </url>
+</urlset>
+"""
+    return xml, 200, {"Content-Type": "application/xml"}
 
 
 if __name__ == "__main__":
