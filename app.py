@@ -16,178 +16,23 @@ HTML = """
 <meta name="google-site-verification" content="v1PzejX5ey60Z5Y_8JEWPIzwRmTXIfcLQPmj0MLYKgs" />
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
-
-body{
-background:#0f172a;
-color:white;
-}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:25px 10%;
-background:#111827;
-position:sticky;
-top:0;
-}
-
-.logo{
-font-size:32px;
-font-weight:bold;
-color:#38bdf8;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:25px;
-font-size:18px;
-}
-
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-text-align:center;
-background:linear-gradient(135deg,#0f172a,#1e3a8a);
-}
-
-.hero h1{
-font-size:72px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:24px;
-max-width:700px;
-margin-bottom:30px;
-}
-
-.btn{
-background:#f59e0b;
-padding:18px 40px;
-border-radius:10px;
-text-decoration:none;
-color:white;
-font-size:22px;
-font-weight:bold;
-}
-
-.section{
-padding:100px 10%;
-}
-
-.title{
-text-align:center;
-font-size:48px;
-margin-bottom:50px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-}
-
-.card{
-background:#1e293b;
-padding:30px;
-border-radius:20px;
-}
-
-.price{
-font-size:32px;
-font-weight:bold;
-color:#22c55e;
-margin-top:15px;
-}
-
-.pay-box{
-margin-top:40px;
-background:#111827;
-padding:30px;
-border-radius:20px;
-text-align:center;
-}
-
-.pay-btn{
-display:inline-block;
-margin:10px;
-padding:15px 25px;
-background:#22c55e;
-color:white;
-border-radius:10px;
-text-decoration:none;
-font-weight:bold;
-}
-
-footer{
-padding:30px;
-text-align:center;
-background:#020617;
-}
-
-@media (max-width: 768px) {
-
-header{
-padding:15px;
-flex-direction:column;
-align-items:flex-start;
-gap:10px;
-}
-
-nav a{
-margin:5px 10px 0 0;
-font-size:14px;
-display:inline-block;
-}
-
-.section{
-padding:50px 15px;
-}
-
-.hero h1{
-font-size:34px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.cards{
-grid-template-columns:1fr;
-}
-
-.card{
-padding:20px;
-}
-
-.title{
-font-size:26px;
-}
-
-.price{
-font-size:24px;
-}
-
-.btn{
-font-size:16px;
-padding:12px 20px;
-}
-
-.pay-box{
-padding:20px;
-}
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{background:#0f172a;color:white;}
+header{display:flex;justify-content:space-between;align-items:center;padding:25px 10%;background:#111827;position:sticky;top:0;}
+.logo{font-size:32px;font-weight:bold;color:#38bdf8;}
+nav a{color:white;text-decoration:none;margin-left:25px;font-size:18px;}
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;background:linear-gradient(135deg,#0f172a,#1e3a8a);}
+.hero h1{font-size:72px;margin-bottom:20px;}
+.hero p{font-size:24px;max-width:700px;margin-bottom:30px;}
+.btn{background:#f59e0b;padding:18px 40px;border-radius:10px;text-decoration:none;color:white;font-size:22px;font-weight:bold;}
+.section{padding:100px 10%;}
+.title{text-align:center;font-size:48px;margin-bottom:50px;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
+.card{background:#1e293b;padding:30px;border-radius:20px;}
+.price{font-size:32px;font-weight:bold;color:#22c55e;margin-top:15px;}
+.pay-box{margin-top:40px;background:#111827;padding:30px;border-radius:20px;text-align:center;}
+.pay-btn{display:inline-block;margin:10px;padding:15px 25px;background:#22c55e;color:white;border-radius:10px;text-decoration:none;font-weight:bold;}
+footer{padding:30px;text-align:center;background:#020617;}
 </style>
 </head>
 
@@ -206,99 +51,25 @@ padding:20px;
 <section class="hero">
 <h1>Стань Python Разработчиком</h1>
 <p>Освой программирование с нуля и начни карьеру в IT.</p>
-
-<a class="btn" href="https://wa.me/992109919197?text=Хочу записаться на курс Python">
-🔥 Записаться
-</a>
+<a class="btn" href="https://wa.me/992109919197?text=Хочу записаться на курс Python">🔥 Записаться</a>
 </section>
 
 <section class="section">
 <h2 class="title">Наши курсы</h2>
-
 <div class="cards">
-
-<div class="card">
-<h3>Python с нуля</h3>
-<p>Переменные, функции, циклы, ООП и проекты.</p>
-<div class="price">499 сомони</div>
-</div>
-
-<div class="card">
-<h3>Web-разработка</h3>
-<p>Flask, Django, базы данных.</p>
-<div class="price">999 сомони</div>
-</div>
-
-<div class="card">
-<h3>AI и Machine Learning</h3>
-<p>Нейросети и анализ данных.</p>
-<div class="price">1499 сомони</div>
-</div>
-
+<div class="card"><h3>Python с нуля</h3><p>Переменные, функции, циклы, ООП и проекты.</p><div class="price">499 сомони</div></div>
+<div class="card"><h3>Web-разработка</h3><p>Flask, Django, базы данных.</p><div class="price">999 сомони</div></div>
+<div class="card"><h3>AI и Machine Learning</h3><p>Нейросети и анализ данных.</p><div class="price">1499 сомони</div></div>
 </div>
 </section>
 
 <section class="section">
 <h2 class="title">Почему выбирают нас</h2>
-
 <div class="cards">
 <div class="card"><h3>100% Практика</h3><p>Работа над реальными проектами.</p></div>
 <div class="card"><h3>Сертификат</h3><p>Подтверждение навыков.</p></div>
 <div class="card"><h3>Трудоустройство</h3><p>Помощь с работой.</p></div>
 </div>
-</section>
-
-<section class="section">
-<h2 class="title">Отзывы студентов</h2>
-
-<div class="cards">
-<div class="card"><h3>Ахмад</h3><p>Начал брать заказы после курса.</p>⭐⭐⭐⭐⭐</div>
-<div class="card"><h3>Мухаммад</h3><p>Очень понятное обучение.</p>⭐⭐⭐⭐⭐</div>
-<div class="card"><h3>Фаррух</h3><p>Устроился Junior разработчиком.</p>⭐⭐⭐⭐⭐</div>
-</div>
-</section>
-
-<section class="section">
-<h2 class="title">Что вы изучите</h2>
-
-<div class="cards">
-<div class="card"><h3>Python Basics</h3><p>Основы языка</p></div>
-<div class="card"><h3>ООП</h3><p>Классы и объекты</p></div>
-<div class="card"><h3>Django</h3><p>Веб разработка</p></div>
-<div class="card"><h3>Telegram Bots</h3><p>Боты</p></div>
-<div class="card"><h3>Data Science</h3><p>Анализ данных</p></div>
-<div class="card"><h3>AI</h3><p>Нейросети</p></div>
-</div>
-</section>
-
-<section class="section">
-<h2 class="title">Наши преимущества</h2>
-
-<div class="cards">
-<div class="card"><h3>1500+</h3><p>Выпускников</p></div>
-<div class="card"><h3>50+</h3><p>Проектов</p></div>
-<div class="card"><h3>95%</h3><p>Довольных</p></div>
-<div class="card"><h3>24/7</h3><p>Поддержка</p></div>
-</div>
-</section>
-
-<section class="section">
-<h2 class="title">Оплата и запись</h2>
-
-<div class="pay-box">
-<p>Выберите способ связи:</p>
-
-<a class="pay-btn" href="https://wa.me/992109919197" target="_blank">WhatsApp</a>
-
-</div>
-
-<div class="section">
-<h2 class="title">Дополнительно</h2>
-<div class="card">
-Делаем сайты на заказ. Этот сайт тоже продаётся и может быть адаптирован под любой бизнес.
-</div>
-</div>
-
 </section>
 
 <footer>
@@ -350,7 +121,7 @@ def admin():
 @app.route("/robots.txt")
 def robots():
     return Response(
-        "User-agent: *\nAllow: /\nSitemap: https://python-academy.onrender.com/sitemap.xml",
+        "User-agent: *\nAllow: /\nSitemap: https://python-academy.onrender.com/sitemap.xml\n",
         mimetype="text/plain"
     )
 
